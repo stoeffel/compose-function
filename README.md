@@ -35,7 +35,7 @@ function add(x, y) {
   return x + y;
 }
 
-// add(sqr(add(x, 2)), 6)
+// add(6, sqr(add(2, x)))
 compose(
   curry(add, 2),
   sqr,
