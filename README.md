@@ -17,9 +17,9 @@ Usage
 ```js
 var compose = require('compose-function');
 
-var add6 = compose(add2,add4); // add4(add2())
+var composition = compose(add2, sqr); // sqr(add2(x))
 
-add6(2) // => 8
+composition(2) // => 16
 
 compose(inc, sqr)(2); // => 9
 compose(sqr, inc)(2); // => 5
