@@ -2,7 +2,7 @@ Compose-Function
 ================
 
 [![Build Status](https://travis-ci.org/stoeffel/compose-function.svg)](https://travis-ci.org/stoeffel/compose-function) [![npm version](https://badge.fury.io/js/compose-function.svg)](http://badge.fury.io/js/compose-function)
-> f(g(x))
+> Compose a new function from smaller functions `f(g(x))`
 
 Installation
 ------------
