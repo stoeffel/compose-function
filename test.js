@@ -50,6 +50,17 @@ describe('compose-function', function() {
         curry(map, curry.__, sqr)
       )([1,2,3,4,5,6,7,8])
     ).to.eql([4, 16, 36, 64]);
+
+    expect(
+      compose(
+        compose(
+          curry(filter, curry.__, even)
+        ),
+        compose(
+          curry(map, curry.__, sqr)
+        )
+      )([1,2,3,4,5,6,7,8])
+    ).to.eql([4, 16, 36, 64]);
   });
 
   it('should fail if no function is passed', function() {
