@@ -41,4 +41,10 @@ compose(
   sqr,
   curry(add, 6)
 );
+
+// map(filter(list, even), sqr)
+compose(
+  curry(filter, curry.__, even),
+  curry(map, curry.__, sqr)
+)([1,2,3,4,5,6,7,8]) // => [4, 16, 36, 64]
 ```

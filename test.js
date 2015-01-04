@@ -1,8 +1,9 @@
 var compose = require('./index.js'),
+  curry = require('chickencurry'),
   expect = require('expect.js');
 
 describe('compose-function', function() {
-  var inc, add2, sqr;
+  var inc, add2, sqr, even, filter, map;
 
   beforeEach(function() {
     inc = function(x) {
@@ -14,6 +15,24 @@ describe('compose-function', function() {
     sqr = function(x) {
       return x * x;
     };
+    even = function(x) {
+      return x % 2 === 0;
+    };
+    filter = function(list, where) {
+      var newList = [];
+      for(var i = 0; i<list.length; i++) {
+        if (where(list[i]))
+          newList.push(list[i]);
+      }
+      return newList;
+    };
+    map = function(list, mapper) {
+      var newList = [];
+      for(var i = 0; i<list.length; i++) {
+        newList.push(mapper(list[i]));
+      }
+      return newList;
+    };
   });
 
   it('should compose a new function', function() {
@@ -24,6 +43,13 @@ describe('compose-function', function() {
     expect(compose(sqr, inc)(2)).to.equal(5);
     expect(compose(inc, sqr)(2)).to.equal(9);
     expect(compose(inc, inc, sqr, add2, add2)(2)).to.equal(20);
+
+    expect(
+      compose(
+        curry(filter, curry.__, even),
+        curry(map, curry.__, sqr)
+      )([1,2,3,4,5,6,7,8])
+    ).to.eql([4, 16, 36, 64]);
   });
 
   it('should fail if no function is passed', function() {

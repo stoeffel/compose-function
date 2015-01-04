@@ -1,6 +1,6 @@
 {
   "name": "compose-function",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Compose new functions f(g(x))",
   "main": "index.js",
   "scripts": {
@@ -22,6 +22,7 @@
   },
   "homepage": "http://github.com/stoeffel/compose-function",
   "devDependencies": {
+    "chickencurry": "^1.0.2",
     "expect.js": "^0.3.1",
     "mocha": "^2.1.0"
   },
