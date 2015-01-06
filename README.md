@@ -25,6 +25,18 @@ compose(sqr, inc)(2); // => 9
 compose(inc, sqr)(2); // => 5
 ```
 
+### Sweetjs
+
+```js
+var composition = sqr ... add2; // sqr(add2(x))
+
+composition(2) // => 16
+```
+
+```bash
+$ sjs -m compose-function/macro yourfile.js
+```
+
 ### with curry
 
 ```js
