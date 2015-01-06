@@ -17,12 +17,12 @@ Usage
 ```js
 var compose = require('compose-function');
 
-var composition = compose(add2, sqr); // sqr(add2(x))
+var composition = compose(sqr, add2); // sqr(add2(x))
 
 composition(2) // => 16
 
-compose(inc, sqr)(2); // => 9
-compose(sqr, inc)(2); // => 5
+compose(sqr, inc)(2); // => 9
+compose(inc, sqr)(2); // => 5
 ```
 
 ### with curry
@@ -37,14 +37,14 @@ function add(x, y) {
 
 // add(6, sqr(add(2, x)))
 compose(
-  curry(add, 2),
+  curry(add, 6),
   sqr,
-  curry(add, 6)
+  curry(add, 2)
 );
 
 // map(filter(list, even), sqr)
 compose(
-  curry(filter, curry.__, even),
-  curry(map, curry.__, sqr)
+  curry(map, curry.__, sqr),
+  curry(filter, curry.__, even)
 )([1,2,3,4,5,6,7,8]) // => [4, 16, 36, 64]
 ```

@@ -9,7 +9,7 @@ module.exports = function() {
     var args = slice.call(arguments),
         func;
     
-    for(var i = 0; i < functions.length; i++) {
+    for(var i = functions.length - 1; i >= 0; i--) {
       func = functions[i];
 
       if (typeof func !== 'function') {

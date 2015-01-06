@@ -39,25 +39,25 @@ describe('compose-function', function() {
     expect(compose(inc)).to.be.a('function');
     expect(compose(inc)(0)).to.equal(1);
     expect(compose(inc, inc)(0)).to.equal(2);
-    expect(compose(inc, add2)(0)).to.equal(3);
-    expect(compose(sqr, inc)(2)).to.equal(5);
-    expect(compose(inc, sqr)(2)).to.equal(9);
-    expect(compose(inc, inc, sqr, add2, add2)(2)).to.equal(20);
+    expect(compose(add2, inc)(0)).to.equal(3);
+    expect(compose(inc, sqr)(2)).to.equal(5);
+    expect(compose(sqr, inc)(2)).to.equal(9);
+    expect(compose(add2, add2, sqr, inc, inc)(2)).to.equal(20);
 
     expect(
       compose(
-        curry(filter, curry.__, even),
-        curry(map, curry.__, sqr)
+        curry(map, curry.__, sqr),
+        curry(filter, curry.__, even)
       )([1,2,3,4,5,6,7,8])
     ).to.eql([4, 16, 36, 64]);
 
     expect(
       compose(
         compose(
-          curry(filter, curry.__, even)
+          curry(map, curry.__, sqr)
         ),
         compose(
-          curry(map, curry.__, sqr)
+          curry(filter, curry.__, even)
         )
       )([1,2,3,4,5,6,7,8])
     ).to.eql([4, 16, 36, 64]);
