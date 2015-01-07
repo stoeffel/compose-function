@@ -1,10 +1,10 @@
 {
   "name": "compose-function",
-  "version": "1.1.1",
+  "version": "1.2.1",
   "description": "Compose new functions f(g(x))",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "sjs -m ./macro test.sjs -o test.js; _mocha --reporter nyan; rm test.js"
   },
   "repository": {
     "type": "git",
@@ -24,9 +24,9 @@
   "devDependencies": {
     "chickencurry": "^1.0.2",
     "expect.js": "^0.3.1",
-    "mocha": "^2.1.0"
+    "mocha": "^2.1.0",
+    "sweet.js": "^0.7.3"
   },
   "dependencies": {
-    "sweet.js": "^0.7.3"
   }
 }
