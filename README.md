@@ -53,6 +53,10 @@ compose(
   sqr,
   curry(add, 2)
 );
+// or with the sweetjs macro
+var myFunc = curry(add, 6) ...
+             sqr ...
+             curry(add, 2)
 
 // map(filter(list, even), sqr)
 compose(
