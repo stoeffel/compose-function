@@ -2,6 +2,10 @@ var compose = require('./index.js'),
   curry = require('chickencurry'),
   expect = require('expect.js');
 
+function zero() {
+  return 0;
+}
+
 function inc(x) {
   return x + 1;
 }
@@ -68,6 +72,12 @@ describe('compose-function', function() {
         )
       )([1, 2, 3, 4, 5, 6, 7, 8])
     ).to.eql([4, 16, 36, 64]);
+  });
+
+  it('should create a function with the same arity as the last function', function() {
+    expect(compose(inc, zero).length).to.equal(0);
+    expect(compose(inc, add2).length).to.equal(1);
+    expect(compose(inc, add).length).to.equal(2);
   });
 
   it('should fail if no function is passed', function() {

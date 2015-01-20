@@ -1,10 +1,17 @@
+var arityN = require('arity-n');
 var slice = Array.prototype.slice;
 
 module.exports = function() {
 
   var functions = slice.call(arguments);
+  var lastIdx = functions.length - 1;
+  var arity = 0;
 
-  return (function() {
+  if (lastIdx >= 0 && functions[lastIdx]) {
+    arity = functions[lastIdx].length;
+  }
+
+  return arityN(function() {
 
     var args = slice.call(arguments),
         func;
@@ -20,5 +27,5 @@ module.exports = function() {
     }
 
     return args[0];
-  });
+  }, arity);
 };
