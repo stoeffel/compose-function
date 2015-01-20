@@ -6,6 +6,10 @@ function inc(x) {
   return x + 1;
 }
 
+function add(x, y) {
+  return x + y;
+}
+
 function add2(x) {
   return x + 2;
 }
@@ -45,6 +49,7 @@ describe('compose-function', function() {
     expect(compose(inc, sqr)(2)).to.equal(5);
     expect(compose(sqr, inc)(2)).to.equal(9);
     expect(compose(add2, add2, sqr, inc, inc)(2)).to.equal(20);
+    expect(compose(inc, add)(2, 3)).to.equal(6);
 
     expect(
       compose(
