@@ -1,6 +1,6 @@
 {
   "name": "compose-function",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Compose new functions f(g(x))",
   "main": "index.js",
   "scripts": {
@@ -28,6 +28,6 @@
     "sweet.js": "^0.7.3"
   },
   "dependencies": {
-    "arity-n": "^1.0.2"
+    "arity-n": "^1.0.3"
   }
 }
