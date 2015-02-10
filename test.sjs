@@ -81,12 +81,9 @@ describe('compose-function', function() {
   });
 
   it('should fail if no function is passed', function() {
-    expect(compose(1)).to.throwError();
-    expect(compose(null)).to.throwError();
-    expect(compose(undefined)).to.throwError();
-    expect(compose(inc, 1)).to.throwError();
-    expect(compose(inc, null)).to.throwError();
-    expect(compose(inc, undefined)).to.throwError();
+    expect(compose.bind(1)).to.throwError();
+    expect(compose.bind(null)).to.throwError();
+    expect(compose.bind(undefined)).to.throwError();
   });
 });
 
