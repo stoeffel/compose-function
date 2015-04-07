@@ -1,5 +1,6 @@
 var compose = require('./index.js'),
   curry = require('chickencurry'),
+  mockery = require('mockery'),
   expect = require('expect.js');
 
 function zero() {
@@ -84,27 +85,5 @@ describe('compose-function', function() {
     expect(compose.bind(1)).to.throwError();
     expect(compose.bind(null)).to.throwError();
     expect(compose.bind(undefined)).to.throwError();
-  });
-});
-
-describe('compose-function/macro', function() {
-
-  it('should compose a new function', function() {
-    expect(inc).to.be.a('function');
-    expect(inc(0)).to.equal(1);
-    expect((inc ... inc)(0)).to.equal(2);
-    expect((add2 ... inc)(0)).to.equal(3);
-    expect((inc ... sqr)(2)).to.equal(5);
-    expect((sqr ... inc)(2)).to.equal(9);
-    expect((function(x){return x*x*x;} ... inc)(2)).to.equal(27);
-    expect((function(x){
-      return x*x*x;
-    } ... inc)(2)).to.equal(27);
-    expect((function(x){
-      return x*x*x;
-    } ... function(x){
-      return x + 1;
-    })(2)).to.equal(27);
-    expect((add2 ... add2 ... sqr ... inc ... inc)(2)).to.equal(20);
   });
 });
