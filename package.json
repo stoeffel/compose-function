@@ -1,6 +1,6 @@
 {
   "name": "compose-function",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Compose new functions f(g(x))",
   "main": "index.js",
   "scripts": {
