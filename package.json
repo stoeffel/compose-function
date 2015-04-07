@@ -35,6 +35,6 @@
     "sweet.js": "^0.7.3"
   },
   "dependencies": {
-    "arity-n": "^1.0.3"
+    "arity-n": "^1.0.4"
   }
 }
