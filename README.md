@@ -11,6 +11,8 @@
   <sub>logo by <a href="http://justinmezzell.tumblr.com/">Justin Mezzell</a></sub>
   <blockquote align="center">Compose a new function from smaller functions `f(g(x))`</blockquote>
 </p>
+
+
 [![Travis](https://img.shields.io/travis/stoeffel/compose-function.svg?style=flat-square)](https://travis-ci.org/stoeffel/compose-function)
 [![npm](https://img.shields.io/npm/v/compose-function.svg?style=flat-square)](https://www.npmjs.com/package/compose-function)
 [![Dependency Status](https://david-dm.org/stoeffel/compose-function.svg?style=flat-square)](https://david-dm.org/stoeffel/compose-function)
