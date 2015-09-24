@@ -3,6 +3,7 @@
 <p align="center">
   <a href="#installation">Installation</a> |
   <a href="#usage">Usage</a> |
+  <a href="#related">Related</a> |
   <a href="#license">License</a>
   <br><br>
   <img align="center" height="300" src="http://33.media.tumblr.com/006dfad04f93ec5b3680ec7cdae3fafa/tumblr_n8kgl18uU41qcung4o1_1280.gif">
