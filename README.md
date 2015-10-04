@@ -44,7 +44,7 @@ compose(inc, sqr)(2); // => 5
 
 ```js
 import compose from 'compose-function';
-const { curry, _ } = require('curry-this')({Symbol:() => 'CURRY'});
+import { curry, _ } from 'curry-this';
 
 
 const add = (x, y) => x + y;
