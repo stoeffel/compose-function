@@ -1,5 +1,5 @@
 import compose from '../module';
-const { curry, _ } = require('curry-this')({Symbol:() => 'CURRY'});
+import { curry, _ } from 'curry-this';
 
 import test from 'tape-catch';
 
