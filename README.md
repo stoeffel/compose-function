@@ -21,7 +21,7 @@
 Installation
 ------------
 
-`npm install compose-function`
+`npm install compose-function --save`
 
 Usage
 -----
