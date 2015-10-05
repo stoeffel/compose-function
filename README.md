@@ -40,6 +40,7 @@ compose(inc, sqr)(2); // => 5
 ```
 
 
+
 ## with curry
 
 ```js
